@@ -1,0 +1,70 @@
+idx,op,input dtype,weight dtype,weight quant,bias dtype,output dtype,out scale,out zero-point,MACs,status,output tensor
+0,QUANTIZE,UINT8,,,,INT8,1.0,-128,0,integer requantize,tfl.quantize
+1,MUL,INT8,,,,INT8,0.0117647061124444,-43,0,INT8 kernel,mobilenetv2_224_1/to_minus1_plus1_1/mul
+2,ADD,INT8,,,,INT8,0.007843137718737125,-1,0,INT8 kernel,mobilenetv2_224_1/to_minus1_plus1_1/add
+3,CONV_2D,INT8,INT8,per-channel (32),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,netv2_224_1/mobilenetv2_1.00_224_1/bn_Conv1_1/batchnorm/sub1
+4,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (32),INT32,INT8,0.0235294122248888,-128,3612672,INT8 kernel,netv2_1.00_224_1/expanded_conv_depthwise_BN_1/batchnorm/sub1
+5,CONV_2D,INT8,INT8,per-channel (16),INT32,INT8,0.33360177278518677,1,6422528,INT8 kernel,lenetv2_1.00_224_1/expanded_conv_project_BN_1/batchnorm/sub1
+6,CONV_2D,INT8,INT8,per-channel (96),INT32,INT8,0.0235294122248888,-128,19267584,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_1_expand_BN_1/batchnorm/sub1
+7,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (96),INT32,INT8,0.0235294122248888,-128,2709504,INT8 kernel,mobilenetv2_1.00_224_1/block_1_depthwise_BN_1/batchnorm/sub1
+8,CONV_2D,INT8,INT8,per-channel (24),INT32,INT8,0.26842495799064636,-12,7225344,INT8 kernel,1/mobilenetv2_1.00_224_1/block_1_project_BN_1/batchnorm/sub1
+9,CONV_2D,INT8,INT8,per-channel (144),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_2_expand_BN_1/batchnorm/sub1
+10,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (144),INT32,INT8,0.0235294122248888,-128,4064256,INT8 kernel,mobilenetv2_1.00_224_1/block_2_depthwise_BN_1/batchnorm/sub1
+11,CONV_2D,INT8,INT8,per-channel (24),INT32,INT8,0.4507662355899811,-15,10838016,INT8 kernel,1/mobilenetv2_1.00_224_1/block_2_project_BN_1/batchnorm/sub1
+12,ADD,INT8,,,,INT8,0.43761637806892395,-19,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_2_add_1/Add
+13,CONV_2D,INT8,INT8,per-channel (144),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_3_expand_BN_1/batchnorm/sub1
+14,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (144),INT32,INT8,0.0235294122248888,-128,1016064,INT8 kernel,mobilenetv2_1.00_224_1/block_3_depthwise_BN_1/batchnorm/sub1
+15,CONV_2D,INT8,INT8,per-channel (32),INT32,INT8,0.24544799327850342,-3,3612672,INT8 kernel,1/mobilenetv2_1.00_224_1/block_3_project_BN_1/batchnorm/sub1
+16,CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_4_expand_BN_1/batchnorm/sub1
+17,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,1354752,INT8 kernel,mobilenetv2_1.00_224_1/block_4_depthwise_BN_1/batchnorm/sub1
+18,CONV_2D,INT8,INT8,per-channel (32),INT32,INT8,0.2882794439792633,0,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_4_project_BN_1/batchnorm/sub1
+19,ADD,INT8,,,,INT8,0.2882794439792633,0,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_4_add_1/Add
+20,CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_5_expand_BN_1/batchnorm/sub1
+21,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,1354752,INT8 kernel,mobilenetv2_1.00_224_1/block_5_depthwise_BN_1/batchnorm/sub1
+22,CONV_2D,INT8,INT8,per-channel (32),INT32,INT8,0.40224120020866394,-15,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_5_project_BN_1/batchnorm/sub1
+23,ADD,INT8,,,,INT8,0.40224120020866394,-15,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_5_add_1/Add
+24,CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_6_expand_BN_1/batchnorm/sub1
+25,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (192),INT32,INT8,0.0235294122248888,-128,338688,INT8 kernel,mobilenetv2_1.00_224_1/block_6_depthwise_BN_1/batchnorm/sub1
+26,CONV_2D,INT8,INT8,per-channel (64),INT32,INT8,0.22089418768882751,-9,2408448,INT8 kernel,1/mobilenetv2_1.00_224_1/block_6_project_BN_1/batchnorm/sub1
+27,CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_7_expand_BN_1/batchnorm/sub1
+28,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,677376,INT8 kernel,mobilenetv2_1.00_224_1/block_7_depthwise_BN_1/batchnorm/sub1
+29,CONV_2D,INT8,INT8,per-channel (64),INT32,INT8,0.21660004556179047,-4,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_7_project_BN_1/batchnorm/sub1
+30,ADD,INT8,,,,INT8,0.2121461182832718,-2,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_7_add_1/Add
+31,CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_8_expand_BN_1/batchnorm/sub1
+32,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,677376,INT8 kernel,mobilenetv2_1.00_224_1/block_8_depthwise_BN_1/batchnorm/sub1
+33,CONV_2D,INT8,INT8,per-channel (64),INT32,INT8,0.22292537987232208,-2,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_8_project_BN_1/batchnorm/sub1
+34,ADD,INT8,,,,INT8,0.22292537987232208,-2,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_8_add_1/Add
+35,CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,_1/mobilenetv2_1.00_224_1/block_9_expand_BN_1/batchnorm/sub1
+36,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,677376,INT8 kernel,mobilenetv2_1.00_224_1/block_9_depthwise_BN_1/batchnorm/sub1
+37,CONV_2D,INT8,INT8,per-channel (64),INT32,INT8,0.23660415410995483,0,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_9_project_BN_1/batchnorm/sub1
+38,ADD,INT8,,,,INT8,0.23660415410995483,0,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_9_add_1/Add
+39,CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,4816896,INT8 kernel,1/mobilenetv2_1.00_224_1/block_10_expand_BN_1/batchnorm/sub1
+40,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (384),INT32,INT8,0.0235294122248888,-128,677376,INT8 kernel,obilenetv2_1.00_224_1/block_10_depthwise_BN_1/batchnorm/sub1
+41,CONV_2D,INT8,INT8,per-channel (96),INT32,INT8,0.190461203455925,1,7225344,INT8 kernel,/mobilenetv2_1.00_224_1/block_10_project_BN_1/batchnorm/sub1
+42,CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,1/mobilenetv2_1.00_224_1/block_11_expand_BN_1/batchnorm/sub1
+43,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,1016064,INT8 kernel,obilenetv2_1.00_224_1/block_11_depthwise_BN_1/batchnorm/sub1
+44,CONV_2D,INT8,INT8,per-channel (96),INT32,INT8,0.2180691957473755,-7,10838016,INT8 kernel,/mobilenetv2_1.00_224_1/block_11_project_BN_1/batchnorm/sub1
+45,ADD,INT8,,,,INT8,0.2180691957473755,-7,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_11_add_1/Add
+46,CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,1/mobilenetv2_1.00_224_1/block_12_expand_BN_1/batchnorm/sub1
+47,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,1016064,INT8 kernel,obilenetv2_1.00_224_1/block_12_depthwise_BN_1/batchnorm/sub1
+48,CONV_2D,INT8,INT8,per-channel (96),INT32,INT8,0.26514142751693726,-11,10838016,INT8 kernel,/mobilenetv2_1.00_224_1/block_12_project_BN_1/batchnorm/sub1
+49,ADD,INT8,,,,INT8,0.26514142751693726,-11,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_12_add_1/Add
+50,CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,10838016,INT8 kernel,1/mobilenetv2_1.00_224_1/block_13_expand_BN_1/batchnorm/sub1
+51,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (576),INT32,INT8,0.0235294122248888,-128,254016,INT8 kernel,obilenetv2_1.00_224_1/block_13_depthwise_BN_1/batchnorm/sub1
+52,CONV_2D,INT8,INT8,per-channel (160),INT32,INT8,0.13586275279521942,5,4515840,INT8 kernel,/mobilenetv2_1.00_224_1/block_13_project_BN_1/batchnorm/sub1
+53,CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,7526400,INT8 kernel,1/mobilenetv2_1.00_224_1/block_14_expand_BN_1/batchnorm/sub1
+54,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,423360,INT8 kernel,obilenetv2_1.00_224_1/block_14_depthwise_BN_1/batchnorm/sub1
+55,CONV_2D,INT8,INT8,per-channel (160),INT32,INT8,0.16274330019950867,3,7526400,INT8 kernel,/mobilenetv2_1.00_224_1/block_14_project_BN_1/batchnorm/sub1
+56,ADD,INT8,,,,INT8,0.16274330019950867,3,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_14_add_1/Add
+57,CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,7526400,INT8 kernel,1/mobilenetv2_1.00_224_1/block_15_expand_BN_1/batchnorm/sub1
+58,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,423360,INT8 kernel,obilenetv2_1.00_224_1/block_15_depthwise_BN_1/batchnorm/sub1
+59,CONV_2D,INT8,INT8,per-channel (160),INT32,INT8,0.3016689419746399,7,7526400,INT8 kernel,/mobilenetv2_1.00_224_1/block_15_project_BN_1/batchnorm/sub1
+60,ADD,INT8,,,,INT8,0.3016689419746399,7,0,INT8 kernel,mobilenetv2_224_1/mobilenetv2_1.00_224_1/block_15_add_1/Add
+61,CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,7526400,INT8 kernel,1/mobilenetv2_1.00_224_1/block_16_expand_BN_1/batchnorm/sub1
+62,DEPTHWISE_CONV_2D,INT8,INT8,per-channel (960),INT32,INT8,0.0235294122248888,-128,423360,INT8 kernel,obilenetv2_1.00_224_1/block_16_depthwise_BN_1/batchnorm/sub1
+63,CONV_2D,INT8,INT8,per-channel (320),INT32,INT8,0.14261451363563538,32,15052800,INT8 kernel,/mobilenetv2_1.00_224_1/block_16_project_BN_1/batchnorm/sub1
+64,CONV_2D,INT8,INT8,per-channel (1280),INT32,INT8,0.0235294122248888,-128,20070400,INT8 kernel,etv2_224_1/mobilenetv2_1.00_224_1/Conv_1_bn_1/batchnorm/sub1
+65,MEAN,INT8,,,,INT8,0.021869700402021408,-128,0,INT8 kernel,224_1/mobilenetv2_1.00_224_1/global_average_pooling2d_1/Mean
+66,FULLY_CONNECTED,INT8,INT8,per-channel (1000),INT32,INT8,0.08726299554109573,-53,1280000,INT8 kernel,bilenetv2_224_1/mobilenetv2_1.00_224_1/predictions_1/BiasAdd
+67,SOFTMAX,INT8,,,,INT8,0.00390625,-128,0,INT8 kernel,StatefulPartitionedCall_1:01
+68,QUANTIZE,INT8,,,,UINT8,0.00390625,0,0,integer requantize,StatefulPartitionedCall_1:0

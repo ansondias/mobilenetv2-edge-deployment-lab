@@ -1,0 +1,10 @@
+model,operators,INT8 kernels,float kernels,QUANTIZE/DEQUANTIZE boundaries,int requantize,MACs on INT8 kernels,MACs before 1st float op,I/O dtype,constant (weight) storage,GMACs
+mobilenetv2_224_fp32,67,0,67,0,0,0.0,0.0,FLOAT32 -> FLOAT32,"FLOAT32 13.95 MB, INT32 8 B",0.300774272
+mobilenetv2_224_int8_fallback,69,67,0,2,0,1.0,1.0,FLOAT32 -> FLOAT32,"INT8 3.47 MB, INT32 72 kB",0.300774272
+mobilenetv2_224_int8,69,67,0,0,2,1.0,1.0,UINT8 -> UINT8,"INT8 3.47 MB, INT32 72 kB",0.300774272
+mobilenetv2_160_fp32,67,0,67,0,0,0.0,0.0,FLOAT32 -> FLOAT32,"FLOAT32 13.95 MB, INT32 8 B",0.1540832
+mobilenetv2_160_int8_fallback,69,67,0,2,0,1.0,1.0,FLOAT32 -> FLOAT32,"INT8 3.47 MB, INT32 72 kB",0.1540832
+mobilenetv2_160_int8,69,67,0,0,2,1.0,1.0,UINT8 -> UINT8,"INT8 3.47 MB, INT32 72 kB",0.1540832
+mobilenetv2_96_fp32,67,0,67,0,0,0.0,0.0,FLOAT32 -> FLOAT32,"FLOAT32 13.95 MB, INT32 8 B",0.056289152
+mobilenetv2_96_int8_fallback,69,67,0,2,0,1.0,1.0,FLOAT32 -> FLOAT32,"INT8 3.47 MB, INT32 72 kB",0.056289152
+mobilenetv2_96_int8,69,67,0,0,2,1.0,1.0,UINT8 -> UINT8,"INT8 3.47 MB, INT32 72 kB",0.056289152

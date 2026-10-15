@@ -1,0 +1,24 @@
+TensorFlow op,TFLite op(s) emitted,kernel,converter raised an error?
+relu6,(fused into FULLY_CONNECTED),INT8,no
+hard-swish,HARD_SWISH,INT8,no
+sigmoid,LOGISTIC,INT8,no
+tanh,TANH,INT8,no
+exp,EXP,INT8,no
+log,ADD LOG,INT8,no
+sqrt,ADD SQRT,INT8,no
+rsqrt,ADD RSQRT,INT8,no
+gelu (tf.nn.gelu),GELU,INT8,no
+l2_normalize,L2_NORMALIZATION,INT8,no
+divide (tensor/tensor),ADD DIV,INT8,no
+squared_difference,SQUARED_DIFFERENCE,INT8,no
+square,SQUARE,FLOAT fallback,no
+pow (x^1.5),ADD POW,FLOAT fallback,no
+sin,SIN,FLOAT fallback,no
+cos,COS,FLOAT fallback,no
+floor,FLOOR,FLOAT fallback,no
+round,ROUND,FLOAT fallback,no
+sign,SIGN,FLOAT fallback,no
+elu,ELU,FLOAT fallback,no
+cumsum,CUMSUM,FLOAT fallback,no
+atan2,ADD ATAN2,FLOAT fallback,no
+erf,—,conversion FAILED,yes (not a TFLite builtin op)

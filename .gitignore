@@ -1,0 +1,5 @@
+# Large / regenerable artefacts (re-created by running the notebook)
+data/
+models/
+.ipynb_checkpoints/
+__pycache__/
